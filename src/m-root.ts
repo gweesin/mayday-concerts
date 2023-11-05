@@ -8,8 +8,8 @@ import poster from "./assets/poster.png";
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement("my-element")
-export class MyElement extends LitElement {
+@customElement("m-root")
+export class MRoot extends LitElement {
   /**
    * Copy for the read the docs hint.
    */
@@ -54,6 +54,7 @@ export class MyElement extends LitElement {
       object-fit: cover;
       will-change: filter;
       transition: filter 300ms;
+      border-radius: 8px;
     }
     .logo:hover {
       filter: drop-shadow(0 0 2em #646cffaa);
@@ -112,6 +113,6 @@ export class MyElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "my-element": MyElement;
+    "my-element": MRoot;
   }
 }
