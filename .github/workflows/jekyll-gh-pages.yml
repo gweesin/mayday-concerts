@@ -38,15 +38,15 @@ jobs:
         run: |
           pnpm install
         # This step installs your project's dependencies using pnpm
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
       - name: Run pnpm build
         run: |
           pnpm build
         # Add the command to build your project using pnpm here
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./docs
+          destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
