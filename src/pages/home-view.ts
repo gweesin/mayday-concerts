@@ -1,6 +1,6 @@
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import poster from "./assets/poster.png";
+import poster from "../assets/poster.png";
 
 /**
  * An example element.
@@ -8,8 +8,8 @@ import poster from "./assets/poster.png";
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement("m-root")
-export class MRoot extends LitElement {
+@customElement("home-view")
+export class HomeView extends LitElement {
   /**
    * Copy for the read the docs hint.
    */
@@ -29,7 +29,7 @@ export class MRoot extends LitElement {
           <img src=${poster} class="logo poster" alt="Mayday Poster" />
         </a>
       </div>
-      <slot></slot>
+      <h1>好好好想见到你</h1>
       <button @click=${this._onClick} part="button">
         immerse with Mayday Concerts
       </button>
@@ -113,6 +113,6 @@ export class MRoot extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "my-element": MRoot;
+    "home-view": HomeView;
   }
 }
