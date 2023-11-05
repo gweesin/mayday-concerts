@@ -30,11 +30,23 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm
+        # This step installs pnpm globally
+      - name: Install project dependencies
+        run: |
+          pnpm install
+        # This step installs your project's dependencies using pnpm
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
+      - name: Run pnpm build
+        run: |
+          pnpm build
+        # Add the command to build your project using pnpm here
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
