@@ -1,7 +1,6 @@
-import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import litLogo from './assets/lit.svg'
-import viteLogo from '/vite.svg'
+import { LitElement, css, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import poster from "./assets/poster.png";
 
 /**
  * An example element.
@@ -9,42 +8,37 @@ import viteLogo from '/vite.svg'
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('my-element')
+@customElement("my-element")
 export class MyElement extends LitElement {
   /**
    * Copy for the read the docs hint.
    */
   @property()
-  docsHint = 'Click on the Vite and Lit logos to learn more'
+  docsHint = "Click on the button to explore more!";
 
   /**
    * The number of times the button has been clicked.
    */
   @property({ type: Number })
-  count = 0
+  count = 0;
 
   render() {
     return html`
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src=${viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://lit.dev" target="_blank">
-          <img src=${litLogo} class="logo lit" alt="Lit logo" />
+        <a target="_blank">
+          <img src=${poster} class="logo poster" alt="Mayday Poster" />
         </a>
       </div>
       <slot></slot>
-      <div class="card">
-        <button @click=${this._onClick} part="button">
-          count is ${this.count}
-        </button>
-      </div>
+      <button @click=${this._onClick} part="button">
+        immerse with Mayday Concerts
+      </button>
       <p class="read-the-docs">${this.docsHint}</p>
-    `
+    `;
   }
 
   private _onClick() {
-    this.count++
+    this.count++;
   }
 
   static styles = css`
@@ -56,20 +50,16 @@ export class MyElement extends LitElement {
     }
 
     .logo {
-      height: 6em;
-      padding: 1.5em;
+      width: 100%;
+      object-fit: cover;
       will-change: filter;
       transition: filter 300ms;
     }
     .logo:hover {
       filter: drop-shadow(0 0 2em #646cffaa);
     }
-    .logo.lit:hover {
+    .logo.poster:hover {
       filter: drop-shadow(0 0 2em #325cffaa);
-    }
-
-    .card {
-      padding: 2em;
     }
 
     .read-the-docs {
@@ -117,11 +107,11 @@ export class MyElement extends LitElement {
         background-color: #f9f9f9;
       }
     }
-  `
+  `;
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-element': MyElement
+    "my-element": MyElement;
   }
 }
