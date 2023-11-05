@@ -7,8 +7,8 @@ export default defineConfig({
     VitePWA({
       includeAssets: ["favicon.ico", "apple-touch-icon.svg", "mask-icon.svg"],
       manifest: {
-        name: "Mayday Concerts",
-        short_name: "MC",
+        name: "五月天 Lyrics",
+        short_name: "五月天 Lyrics",
         description:
           "This App is created to provide an offline Progressive Web App (PWA) for viewing lyrics during Mayday concerts, to prevent difficulties in reading lyrics subtitles when the screen is too far away.",
         theme_color: "#ffffff",
