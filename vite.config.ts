@@ -5,6 +5,9 @@ export default defineConfig({
   base: "./",
   plugins: [
     VitePWA({
+      workbox: {
+        sourcemap: true,
+      },
       includeAssets: ["favicon.ico", "apple-touch-icon.svg", "mask-icon.svg"],
       manifest: {
         name: "五月天 Lyrics",
