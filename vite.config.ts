@@ -2,9 +2,7 @@ import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  build: {
-    outDir: "./docs",
-  },
+  base: "./",
   plugins: [
     VitePWA({
       includeAssets: ["favicon.ico", "apple-touch-icon.svg", "mask-icon.svg"],
