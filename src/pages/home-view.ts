@@ -24,21 +24,23 @@ export class HomeView extends LitElement {
 
   render() {
     return html`
-      <div>
-        <a target="_blank">
-          <img src=${poster} class="logo poster" alt="Mayday Poster" />
-        </a>
-      </div>
-      <h1>好好好想见到你</h1>
-      <button @click=${this._onClick} part="button">
-        immerse with Mayday Concerts
-      </button>
-      <p class="read-the-docs">${this.docsHint}</p>
+      <section class="home-part">
+        <div>
+          <a target="_blank">
+            <img src=${poster} class="logo poster" alt="Mayday Poster" />
+          </a>
+        </div>
+        <h1>好好好想见到你</h1>
+        <button @click=${this._onClick} part="button">
+          immerse with Mayday Concerts
+        </button>
+        <p class="read-the-docs">${this.docsHint}</p>
+      </section>
     `;
   }
 
   private _onClick() {
-    this.count++;
+    location.href = "/music-list";
   }
 
   static styles = css`
@@ -47,6 +49,10 @@ export class HomeView extends LitElement {
       margin: 0 auto;
       padding: 2rem;
       text-align: center;
+    }
+
+    .home-part {
+      padding: 0 2rem;
     }
 
     .logo {
