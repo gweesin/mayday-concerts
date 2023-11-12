@@ -2,6 +2,12 @@ import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { sleep } from "../../utils.ts";
 
+/**
+ * An example element.
+ *
+ * @slot - This element has a slot
+ * @csspart button - The button
+ */
 @customElement("starry-sky")
 export class StarrySky extends LitElement {
   render() {

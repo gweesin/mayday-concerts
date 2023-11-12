@@ -11,6 +11,9 @@ dependencies:
   lit:
     specifier: ^2.8.0
     version: registry.npmmirror.com/lit@2.8.0
+  lrc-file-parser:
+    specifier: ^2.4.1
+    version: registry.npmmirror.com/lrc-file-parser@2.4.1
 
 devDependencies:
   typescript:
@@ -3030,6 +3033,12 @@ packages:
     name: lodash
     version: 4.17.21
     dev: true
+
+  registry.npmmirror.com/lrc-file-parser@2.4.1:
+    resolution: {integrity: sha512-vriDfIyKqdL7xUOHzsAojY/LwfsLBx/Lnob/9EzIx89ZtHLCFl8ewAeR7LaFC+frw8ITRDSgr3mzyb7cZPXYNg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lrc-file-parser/-/lrc-file-parser-2.4.1.tgz}
+    name: lrc-file-parser
+    version: 2.4.1
+    dev: false
 
   registry.npmmirror.com/lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lru-cache/-/lru-cache-5.1.1.tgz}
