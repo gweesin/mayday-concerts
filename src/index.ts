@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit";
 import { Router } from "@vaadin/router";
 import "./pages/home-view.ts";
 import "./pages/music-list-view.ts";
+import "./pages/lyric-view.ts";
 
 class LitRealWorldIndex extends LitElement {
   firstUpdated() {
@@ -11,6 +12,7 @@ class LitRealWorldIndex extends LitElement {
     router.setRoutes([
       { path: "/", component: "home-view" },
       { path: "/music-list", component: "music-list-view" },
+      { path: "/lyric", component: "lyric-view" },
       { path: "(.*)", redirect: "/" },
     ]);
   }

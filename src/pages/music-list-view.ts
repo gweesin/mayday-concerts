@@ -15,41 +15,38 @@ export class MusicListView extends LitElement {
    */
   @property({ type: Array<String> })
   musicList = [
-    "知足",
-    "乾杯",
-    "我不願 讓你一個人",
-    "星空",
-    "溫柔",
-    "後來的我們",
-    "戀愛ing",
-    "玫瑰少年",
-    "志明與春嬌",
-    "最重要的小事",
-    "倔強",
-    "頑固",
-    "倉頡",
-    "你不是真正的快樂",
-    "任意門",
-    "入陣曲",
-    "夜訪吸血鬼",
-    "為你寫下這首情歌",
-    "擁抱",
-    "派對動物",
     "盛夏光年",
-    "私奔到月球",
-    "因為你 所以我",
-    "香水"
+    "爱情万岁",
+    "派对动物",
+    "离开地球表面",
+    "因为你所以我",
+    "知足",
+    "疯狂世界",
+    "香水",
+    "拥抱",
+    "小太阳",
+    "干杯",
+    "最重要的小事",
+    "你不是真正的快乐",
+    "我心中尚未崩坏的地方",
+    "人生海海（feat.白安）",
+    "恋爱ing",
+    "孙悟空",
+    "轧车（喊麦）",
+    "突然好想你",
+    "生命有一种绝对",
   ];
 
   render() {
-    const musicList = this.musicList.map(musicData => html`
+    const musicList = this.musicList.map((musicData, idx) => html`
       <div class="music-list-item">
         <div class="music-list-item__pic-wrap">
           <img src="${music}" class="music-list-item__pic" alt="music logo" />
         </div>
         
-        <div class="music-list-item__content">
-          ${musicData}
+        <div class="music-list-item__content" @click=${this._onClick}>
+          <i class="music-list-item__content__index">#${ idx + 1 }</i>
+          <span>${ musicData }</span>
         </div>
       </div>
     `)
@@ -59,6 +56,10 @@ export class MusicListView extends LitElement {
         ${musicList}
       </div>
     `;
+  }
+
+  private _onClick() {
+    location.href = "/lyric";
   }
 
   static styles = css`
@@ -109,6 +110,12 @@ export class MusicListView extends LitElement {
     .music-list-item__content {
       margin-left: 108px;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .music-list-item__content__index {
+      color: #666;
     }
   `;
 }
