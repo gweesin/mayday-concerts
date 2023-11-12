@@ -14,13 +14,13 @@ export class StarrySky extends LitElement {
   }
 
   createStars() {
-    const numberOfStars = 100; // 星星数量
+    const numberOfStars = 100; // star count
 
     for (let i = 0; i < numberOfStars; i++) {
       const star = document.createElement("div");
       star.className = "star";
-      star.style.left = `${Math.random() * 100}vw`; // 随机水平位置
-      star.style.top = `${Math.random() * 100}vh`; // 随机垂直位置
+      star.style.left = `${Math.random() * 100}vw`; // random horizontal position
+      star.style.top = `${Math.random() * 100}vh`; // random vertical position
 
       sleep(Math.random() * 800).then(() => {
         this.shadowRoot!.appendChild(star);
@@ -39,14 +39,14 @@ export class StarrySky extends LitElement {
       position: absolute;
       width: 2px;
       height: 2px;
-      background-color: #fff; /* 白色星星 */
+      background-color: #fff; /* white star */
       border-radius: 50%;
       animation: twinkle 1s infinite;
     }
 
     @keyframes twinkle {
       50% {
-        opacity: 0; /* 闪烁效果 */
+        opacity: 0; /* twinkle effect */
       }
     }
   `;
